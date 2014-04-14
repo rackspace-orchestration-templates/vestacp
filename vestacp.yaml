@@ -65,11 +65,23 @@ parameters:
     type: string
     default: root@localhost
 
-  vesta_admin_password:
-    description: Admin Password to use with Vesta
+  kitchen:
+    description: URL for the kitchen to use
     type: string
+    default: https://github.com/rackspace-orchestration-templates/vestacp
+
+  chef_version:
+    description: Version of chef client to use
+    type: string
+    defaut: 11.12.2
 
 resources:
+
+  vesta_admin_password:
+    type: "OS::Heat::RandomString"
+    properties:
+      length: 32
+      sequence: lettersdigits
 
   ssh_key:
     type: "OS::Nova::KeyPair"
@@ -90,17 +102,14 @@ resources:
     depends_on: vesta_server
     properties:
       username: root
+      kitchen: { get_param: kitchen }
+      chef_version: { get_param: chef_version }
       private_key: { get_attr: [ssh_key, private_key] }
       host: { get_attr: [vesta_server, accessIPv4] }
-      Berksfile: |
-        site :opscode
-
-        cookbook 'vesta',
-          :git => 'https://github.com/brint/cookbook-vesta'
       node:
         vesta:
           email: { get_param: vesta_email_address }
-          admin_password: { get_param: vesta_admin_password }
+          admin_password: { get_attr: [vesta_admin_password, value] }
         run_list: ["recipe[vesta]",
                    "recipe[vesta::firewall]"]
 
@@ -112,7 +121,7 @@ outputs:
     value: { get_attr: [vesta_server, accessIPv4] }
 
   admin_password:
-    value: { get_param: vesta_admin_password }
+    value: { get_attr: [vesta_admin_password, value] }
 
   vesta_url:
     value:

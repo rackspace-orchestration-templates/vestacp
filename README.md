@@ -29,7 +29,7 @@ heat --os-username <OS-USERNAME> --os-password <OS-PASSWORD> --os-tenant-id \
   stack-create Vesta-Stack -f vestacp.yaml \
   -P ssh_keypair_name=vesta-example \
   -P vesta_email_address="user@example.com" \
-  -P vesta_admin_password=DBLSeRqB
+  -P flavor="1 GB Performance"
 ```
 
 * For UK customers, use `https://lon.identity.api.rackspacecloud.com/v2.0/` as
@@ -58,8 +58,14 @@ the `-P` flag to specify a custom parameter.
   none)
 * `vesta_admin_email`: Email address to configure for the Vesta admin user
   (Default: root@localhost)
-* `vesta_admin_password`: Admin password to configure for use with Vesta
-  (Default: none)
+* `kitchen`: URL for the kitchen to clone with git. The Chef Solo run will copy
+  all files in this repo into the kitchen for the chef run. (Default:
+  https://github.com/rackspace-orchestration-templates/vestacp)
+* `chef_version`: Chef client version to install for the chef run.  (Default:
+  11.12.2)
+
+Note: The admin password will be automatically generated and passed back to you
+as an output.
 
 Outputs
 =======
