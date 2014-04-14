@@ -115,15 +115,19 @@ resources:
 
 outputs:
   private_key:
+    description: The private key to use for logging in as root to the server
     value: { get_attr: [ssh_key, private_key] }
 
   server_ip:
+    description: The public IP address of the server
     value: { get_attr: [vesta_server, accessIPv4] }
 
   admin_password:
+    description: The Vesta and system password for the user 'admin'
     value: { get_attr: [vesta_admin_password, value] }
 
   vesta_url:
+    description: URL to use when logging into Vesta Control Panel
     value:
       str_replace:
         template: "https://%server_ip%:8083"
