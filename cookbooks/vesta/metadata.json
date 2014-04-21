@@ -1,1 +1,37 @@
-{"name":"vesta","description":"Installs Vesta control panel","long_description":"Description\n-----------\nCookbook to install [Vesta Control Panel](http://vestacp.com/).  Pass in an\nadmin password to have it set the admin password to something you know.  If\nyou don't pass in a password hash, you'll need to reset the admin user\npassword before logging into Vesta.\n\nRequirements\n------------\nChef 11+\n\nPlatform\n--------\n* Ubuntu\n* Debian\n* CentOS\n\nCookbooks\n---------\nThis cookbook depends on the following cookbooks:\n* `firewall`\n* `iptables_ng`\n\nRecipes\n-------\n* `default`: Installs the Vesta control panel\n* `firewall`: Opens the Vesta managment port (8083) in the firewall\n\nAttributes\n----------\n* `node['vesta']['email']`: Email address of the Vesta administrator\n* `node['vesta']['admin_pass_hash']`: Password hash for the `admin` user\n* `node['vesta']['admin_password']`: Plain text password to use for the `admin`\nuser. Use `node['vesta']['admin_pass_hash']` instead.\n\nUsage\n-----\nOn nodes, use the default recipe:\n```javascript\n{ \"run_list\": [\"recipe[vesta]\"] }\n```\n\nLicense and Author\n------------------\n- Author:: Brint O'Hearn (<brint.ohearn@rackspace.com>)\n\n```text\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n```\n","maintainer":"Brint O'Hearn","maintainer_email":"brint.ohearn@rackspace.com","license":"Apache 2.0","platforms":{"ubuntu":">= 0.0.0","debian":">= 0.0.0","centos":">= 0.0.0","rhel":">= 0.0.0"},"dependencies":{"firewall":">= 0.0.0","iptables-ng":">= 0.0.0"},"recommendations":{},"suggestions":{},"conflicting":{},"providing":{},"replacing":{},"attributes":{},"groupings":{},"recipes":{"vesta":"Installs Vesta","vesta::firewall":"Opens Vesta management port"},"version":"0.1.0"}
+{
+  "name": "vesta",
+  "version": "0.1.1",
+  "description": "Installs Vesta control panel",
+  "long_description": "Description\n-----------\nCookbook to install [Vesta Control Panel](http://vestacp.com/).  Pass in an\nadmin password to have it set the admin password to something you know.  If\nyou don't pass in a password hash, you'll need to reset the admin user\npassword before logging into Vesta.\n\nRequirements\n------------\nChef 11+\n\nPlatform\n--------\n* Ubuntu\n* Debian\n* CentOS\n\nCookbooks\n---------\nThis cookbook depends on the following cookbooks:\n* `firewall`\n* `iptables_ng`\n\nRecipes\n-------\n* `default`: Installs the Vesta control panel\n* `firewall`: Opens the Vesta managment port (8083) in the firewall\n\nAttributes\n----------\n* `node['vesta']['email']`: Email address of the Vesta administrator\n* `node['vesta']['admin_pass_hash']`: Password hash for the `admin` user\n* `node['vesta']['admin_password']`: Plain text password to use for the `admin`\nuser. Use `node['vesta']['admin_pass_hash']` instead.\n\nUsage\n-----\nOn nodes, use the default recipe:\n```javascript\n{ \"run_list\": [\"recipe[vesta]\"] }\n```\n\nLicense and Author\n------------------\n- Author:: Brint O'Hearn (<brint.ohearn@rackspace.com>)\n\n```text\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n```\n",
+  "maintainer": "Brint O'Hearn",
+  "maintainer_email": "brint.ohearn@rackspace.com",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "rhel": ">= 0.0.0"
+  },
+  "dependencies": {
+    "firewall": ">= 0.0.0",
+    "iptables-ng": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+    "vesta": "Installs Vesta",
+    "vesta::firewall": "Opens Vesta management port"
+  }
+}
