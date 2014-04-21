@@ -51,8 +51,8 @@ Parameters can be replaced with your own values when standing up a stack. Use
 the `-P` flag to specify a custom parameter.
 
 * `server_hostname`: Sets the hostname of the server. (Default: vesta)
-* `image`: Operating system to install (Default: Ubuntu 12.04 LTS (Precise
-  Pangolin))
+* `image`: Operating system to install (Default: Ubuntu 14.04 LTS (Trusty
+  Tahr))
 * `flavor`: Cloud server size to use. (Default: 2 GB Performance)
 * `ssh_keypair_name`: Name of the SSH key pair to register with nova (Default:
   none)
