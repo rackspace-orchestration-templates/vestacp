@@ -4,6 +4,19 @@ description: |
   This is a Heat template to deploy a single Linux server running Vesta Control
   Panel
 
+parameter_groups:
+
+- label: Server Settings
+  parameters:
+  - server_hostname
+  - image
+  - flavor
+
+- label: Vesta Settings
+  parameters:
+  - ssh_keypair_name
+  - vesta_email_address
+
 parameters:
 
   server_hostname:
