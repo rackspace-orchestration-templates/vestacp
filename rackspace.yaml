@@ -6,6 +6,9 @@ flavor: Single Linux server
 flavor-weight: 1
 reach-info:
   icon-20x20: https://0b5294b243620310a700-e388a7f3aba385a925111b1fc6f680d4.ssl.cf2.rackcdn.com/vesta-icon-20x20.png
+hidden_outputs:
+  - private_key
+  - admin_password
 abstract: |
   A single Linux server running the [Vesta Control Panel](http://vestacp.com/)
 instructions: |
