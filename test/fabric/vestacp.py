@@ -19,7 +19,7 @@ def check():
 
     files = [
         '/usr/local/vesta/conf/vesta.conf',
-        '/usr/local/vesta/conf/vesta.conf'
+        '/usr/local/vesta/conf/mysql.conf'
     ]
 
     for f in files:
