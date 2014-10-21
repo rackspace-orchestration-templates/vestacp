@@ -49,7 +49,6 @@ parameters:
       - CentOS 6.5 (PVHVM)
       - Debian 7 (Wheezy) (PVHVM)
       - Ubuntu 12.04 LTS (Precise Pangolin)
-      - Ubuntu 12.04 LTS (Precise Pangolin) (PVHVM)
       - Ubuntu 14.04 LTS (Trusty Tahr)
       - Ubuntu 14.04 LTS (Trusty Tahr) (PVHVM)
       description: Must be a supported operating system.
