@@ -2,6 +2,7 @@ import re
 from fabric.api import env, run, hide, task
 from envassert import detect, file, group, package, port, process, service, \
     user
+from hot.utils.test import get_artifacts, http_check
 
 
 def vestacp_is_responding():
@@ -79,3 +80,9 @@ def check():
         assert service.is_enabled(s), '%s service not enabled' % s
 
     assert vestacp_is_responding(), 'vestacp did not respond as expected.'
+
+
+@task
+def artifacts():
+    env.platform_family = detect.detect()
+    get_artifacts()
