@@ -1,8 +1,8 @@
 import re
 from fabric.api import env, run, hide, task
-from envassert import detect, file, group, package, port, process, service, \
+from envassert import detect, file, port, process, service, \
     user
-from hot.utils.test import get_artifacts, http_check
+from hot.utils.test import get_artifacts
 
 
 def vestacp_is_responding():
