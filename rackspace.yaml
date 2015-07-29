@@ -31,3 +31,6 @@ instructions: |
   This deployment was stood up using
   [chef-solo](http://docs.opscode.com/chef_solo.html). Once the deployment is
   up, chef will not run again, so it is safe to modify configurations.
+description: |
+  A single Linux server running the latest version of
+  [Vesta Control Panel](https://vestacp.com/).
