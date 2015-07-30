@@ -10,7 +10,7 @@ hidden_outputs:
   - private_key
   - admin_password
 abstract: |
-  A single Linux server running the [Vesta Control Panel](http://vestacp.com/)
+  Vesta is an open-source control panel for managing hosting features.
 instructions: |
   #### Getting Started
   [Vesta](http://vestacp.com/) is an open source, web based control panel for
