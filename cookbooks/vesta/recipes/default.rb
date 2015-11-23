@@ -30,7 +30,7 @@ unless File.exist?(installed_file)
 
   execute 'Install Vesta' do
     cwd Chef::Config[:file_cache_path]
-    command "bash vst-install.sh -e #{node['vesta']['email']} -f"
+    command "bash vst-install.sh -y no -e #{node['vesta']['email']} -f"
   end
 
   if node['vesta']['admin_pass_hash']
